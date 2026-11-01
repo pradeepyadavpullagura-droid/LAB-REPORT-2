@@ -399,8 +399,11 @@ This project is pre-configured for seamless deployment to **Vercel** serverless 
 ---
 
 ### Deployment Links
-- **Live Vercel URL:** `https://lab-report-2.vercel.app` *(Or your generated Vercel production URL)*
-- **GitHub Repository:** `https://github.com/pradeepyadavpullagura-droid/LAB-REPORT-2`
+- **Live Vercel Production URL:** [https://lab-report-2.vercel.app](https://lab-report-2.vercel.app)
+- **Live API Endpoints:**
+  - GET All Books: [https://lab-report-2.vercel.app/books/](https://lab-report-2.vercel.app/books/)
+  - GET Book by ID: [https://lab-report-2.vercel.app/books/1/](https://lab-report-2.vercel.app/books/1/)
+- **GitHub Repository:** [https://github.com/pradeepyadavpullagura-droid/LAB-REPORT-2](https://github.com/pradeepyadavpullagura-droid/LAB-REPORT-2)
 
 ---
 
