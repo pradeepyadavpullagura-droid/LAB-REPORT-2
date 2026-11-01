@@ -399,8 +399,8 @@ This project is pre-configured for seamless deployment to **Vercel** serverless 
 ---
 
 ### Deployment Links
-- **Live Vercel URL:** `https://your-project-name.vercel.app` *(Update with your generated Vercel URL)*
-- **GitHub Repository:** `https://github.com/your-username/lab-02-sqlite-crud`
+- **Live Vercel URL:** `https://lab-report-2.vercel.app` *(Or your generated Vercel production URL)*
+- **GitHub Repository:** `https://github.com/pradeepyadavpullagura-droid/LAB-REPORT-2`
 
 ---
 
