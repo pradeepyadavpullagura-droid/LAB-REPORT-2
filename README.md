@@ -339,10 +339,70 @@ npm test
 
 ---
 
-## 12. Deployment Link Placeholder
-- **Live Deployment URL:** `https://your-deployment-link-here.onrender.com` *(Replace when deployed on Render / Railway / Vercel)*
-- **GitHub Repository:** `https://github.com/your-username/lab-02-sqlite-crud` *(Replace with your GitHub repo URL)*
+## 12. Vercel Deployment Guide
+
+This project is pre-configured for seamless deployment to **Vercel** serverless functions.
+
+### Architecture on Vercel
+- **Serverless Entry Point:** `api/index.js` routes all incoming requests to Express.
+- **Routing:** `vercel.json` rewrites all root and sub-paths to the serverless function.
+- **SQLite `/tmp` Strategy:** Because Vercel's root directory is read-only in production, `server.js` automatically copies `database.db` to `/tmp/database.db` when running under `process.env.VERCEL`, allowing both read and write CRUD operations without `SQLITE_READONLY` errors.
+
+---
+
+### Method A: Deploy via GitHub & Vercel Dashboard (Recommended)
+
+1. **Create a GitHub Repository:**
+   - Go to [github.com/new](https://github.com/new) and create a new repository named `lab-02-sqlite-crud`.
+
+2. **Push your code to GitHub:**
+   ```bash
+   git remote add origin https://github.com/<YOUR_GITHUB_USERNAME>/lab-02-sqlite-crud.git
+   git branch -M main
+   git push -u origin main
+   ```
+
+3. **Import to Vercel:**
+   - Log in to [vercel.com](https://vercel.com).
+   - Click **"Add New..."** > **"Project"**.
+   - Select your `lab-02-sqlite-crud` GitHub repository.
+   - Framework Preset: Leave as **Other**.
+   - Root Directory: `./` (default).
+   - Click **"Deploy"**.
+
+4. **Verify Deployment:**
+   - Vercel will give you a live production URL (e.g., `https://lab-02-sqlite-crud.vercel.app`).
+   - Visit `https://lab-02-sqlite-crud.vercel.app/books/` to see your 10 books live!
+
+---
+
+### Method B: Deploy via Vercel CLI (Direct from Terminal)
+
+1. In your project directory, run:
+   ```bash
+   npx vercel
+   ```
+
+2. Follow the interactive prompts:
+   - *Set up and deploy?* -> `Y`
+   - *Which scope?* -> Select your account
+   - *Link to existing project?* -> `N`
+   - *Project name?* -> `lab-02-sqlite-crud`
+   - *Directory?* -> `./`
+   - *Want to modify settings?* -> `N`
+
+3. To deploy directly to production:
+   ```bash
+   npx vercel --prod
+   ```
+
+---
+
+### Deployment Links
+- **Live Vercel URL:** `https://your-project-name.vercel.app` *(Update with your generated Vercel URL)*
+- **GitHub Repository:** `https://github.com/your-username/lab-02-sqlite-crud`
 
 ---
 
 *Academic Integrity Notice: Created for B.Tech Backend Development Fundamentals Lab 02. Completed by P. Pradeep Yadav (Reg: 252U1R7083).*
+
