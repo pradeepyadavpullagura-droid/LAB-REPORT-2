@@ -1,0 +1,47 @@
+### B.Tech Backend Development Fundamentals - Lab 02
+### API Test Requests (REST Client / Postman format)
+### Base URL: http://localhost:3000
+
+@baseUrl = http://localhost:3000
+
+### 0. Health / Root Route
+GET {{baseUrl}}/
+Accept: application/json
+
+### 1. GET /books/ - Retrieve All Books
+GET {{baseUrl}}/books/
+Accept: application/json
+
+### 2. GET /books/:bookId/ - Retrieve Single Book (Success Case)
+GET {{baseUrl}}/books/1/
+Accept: application/json
+
+### 2b. GET /books/:bookId/ - Retrieve Single Book (404 Not Found Edge Case)
+GET {{baseUrl}}/books/999/
+Accept: application/json
+
+### 3. POST /books/ - Add a New Book
+POST {{baseUrl}}/books/
+Content-Type: application/json
+
+{
+  "title": "Computer Networks: A Systems Approach",
+  "author": "Larry L. Peterson & Bruce S. Davie",
+  "price": 849,
+  "pages": 920
+}
+
+### 4. PUT /books/:bookId/ - Update an Existing Book
+PUT {{baseUrl}}/books/1/
+Content-Type: application/json
+
+{
+  "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
+  "author": "Robert C. Martin (Uncle Bob)",
+  "price": 699,
+  "pages": 464
+}
+
+### 5. DELETE /books/:bookId/ - Delete a Book
+DELETE {{baseUrl}}/books/11/
+Accept: application/json
